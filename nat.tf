@@ -26,12 +26,12 @@ resource "nsxt_policy_nat_rule" "demo_egrss_nosnat" {
   firewall_match       = "MATCH_INTERNAL_ADDRESS"
 }
 
-resource "nsxt_policy_nat_rule" "demo_egrss_snat" {
+resource "nsxt_policy_nat_rule" "demo_egress_snat" {
   display_name        = "demo_egress_snat"
   action              = "SNAT"
   enabled             = true
   rule_priority       = "600"
-  translated_networks = [var.ip_demo_snat]
+  translated_networks = [var.snat_demo_lb]
   gateway_path        = nsxt_policy_tier1_gateway.demo_lb_gateway.path
   logging             = true
   firewall_match      = "MATCH_INTERNAL_ADDRESS"

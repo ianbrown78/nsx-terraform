@@ -18,11 +18,11 @@ variable "gw_demo" {
 
 variable "ip_demo_dhcp_server" {
   type    = string
-  default = "10.2.0.253/24"
+  default = "10.1.0.253/24"
 }
 variable "dhcp_demo_dhcp_range" {
   type    = list(string)
-  default = ["10.2.0.10-10.2.0.100"]
+  default = ["10.1.0.10-10.1.0.100"]
 }
 
 variable "load_balancer_ip" {
