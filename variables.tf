@@ -1,6 +1,6 @@
 variable "nsx_hostname" {
   type    = string
-  default = "nsx-126203.c0838553.australia-southeast1.gve.goog"
+  default = "nsx-123456.abcd1234.australia-southeast1.gve.goog"
 }
 variable "nsx_username" {
   type    = string
@@ -8,5 +8,5 @@ variable "nsx_username" {
 }
 variable "nsx_password" {
   type    = string
-  default = ""
+  default = "password"
 }
