@@ -8,10 +8,10 @@ resource "nsxt_policy_lb_service" "demo_lb_service" {
 }
 
 resource "nsxt_policy_lb_pool" "https_virtual_server" {
-  display_name         = "https_virtual_server"
-  description          = "Terraform provisioned LB Pool https_virtual_server"
-  algorithm            = "ROUND_ROBIN"
-  min_active_members   = 1
+  display_name       = "https_virtual_server"
+  description        = "Terraform provisioned LB Pool https_virtual_server"
+  algorithm          = "ROUND_ROBIN"
+  min_active_members = 1
   //active_monitor_path  = data.nsxt_policy_lb_monitor.http-monitor.path
   passive_monitor_path = "/infra/lb-monitor-profiles/default-passive-lb-monitor"
   member {
@@ -41,10 +41,10 @@ resource "nsxt_policy_lb_pool" "https_virtual_server" {
 }
 
 resource "nsxt_policy_lb_virtual_server" "https_redirection" {
-  display_name               = "https_redirection"
-  description                = "Terraform provisioned Virtual Server"
-  access_log_enabled         = true
-  application_profile_path   = data.nsxt_policy_lb_app_profile.https-redirect.path
+  display_name             = "https_redirection"
+  description              = "Terraform provisioned Virtual Server"
+  access_log_enabled       = true
+  application_profile_path = data.nsxt_policy_lb_app_profile.https-redirect.path
   //persistence_profile_path   = data.nsxt_policy_lb_persistence_profile.cookie.path
   enabled                    = true
   ip_address                 = var.load_balancer_ip

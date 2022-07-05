@@ -9,20 +9,20 @@ data "nsxt_policy_edge_cluster" "ec" {
 }
 
 data "nsxt_policy_lb_app_profile" "http" {
-  type = "HTTP"
+  type         = "HTTP"
   display_name = "default-http-lb-app-profile"
 }
 data "nsxt_policy_lb_app_profile" "https-redirect" {
-  type = "HTTP"
+  type         = "HTTP"
   display_name = "https-redirect"
 }
 data "nsxt_policy_lb_persistence_profile" "cookie" {
-  type = "COOKIE"
+  type         = "COOKIE"
   display_name = "default-cookie-lb-persistence-profile"
 }
 
 data "nsxt_policy_lb_monitor" "http-monitor" {
-  type = "HTTP"
+  type         = "HTTP"
   display_name = "default-http-lb-monitor"
 }
 
